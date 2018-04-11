@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Autocomplete</title>
+    <link rel="icon" href="assets/imagen/foodRed.png" type="image/ico">
+
+    <!--Libreries-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <!--Fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet">
+
+    <!--Scripts-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="assets/js/js.js"></script>
+
+    <!--graphyc Chart-->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js">
+    </script>
+
+</head>
+
+<body>
+    <!--Modal-->
+    <div class="modal fade" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Is that healthy?</h5>
+                    <button type="button" class="close empty" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+                </div>
+                <div class="modal-body" id="modalThing">
+
+                </div>
+                <div class="modal-footer">
+                    <p class="modal-title">Enjoy!</p>
+                    <button type="button" class="btn btn-secondary empty" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="text-center m-4 col-md-12 col-xs-12">
+            <div class="page-header" style="border: none;">
+                <img id="header-img" src="assets/imagen/NutriSearch_logo.png" alt="NutriSearch logo">
+            </div>
+        </div>
+    </div>
+    <div class="container">
+
+        <div class="jumbotron container-fluid" style="position: relative; height:auto;">
+            <form>
+                <div class="input-group">
+                    <input type="text" name="search" id="search" class="form-control" list="result" placeholder="Search Food">
+                    <div class="div-btn-input">
+                        <button class="btn btn-default" type="submit" id="btn-search">
+                          <i class="glyphicon glyphicon-search"></i>
+                        </button>
+                    </div>
+                    <datalist id="result"></datalist>
+                </div>
+            </form>
+
+            <div class="row">
+                <div class="col-md-12">
+                    <h2 class="nameFood text-center"> </h2>
+                </div>
+            </div>
+
+            <div class="container-ntr-graph">
+                <div class="row">
+                    <div class="col-md-4 col-sm-12">
+                        <div class="table-container">
+                            <h3 class="title text-center">Nutrition Facts</h3>
+                            <hr class="hr-ntrFacts"></hr>
+                            <h4 class="nutrients">Calories <span id="calories"></span></h4>
+                            <hr class="hr-cal"></hr>
+                            <h4 class="nutrients text-right">% Daily Value*</h4>
+                            <hr class="hr-space"></hr>
+                            <h4 class="nutrients"></h4>
+                            <h4 class="nutrients">Total Fat <span id="total-fat"></span></h4>
+                            <hr class="hr-space"></hr>
+                            <h4 class="nutrients">Total Carbohydrates <span id="total-carb"></span></h4>
+                            <hr class="hr-space" style="margin-left: 15px;"></hr>
+                            <h4 class="nutrients sugar-class">Sugars <span id="sugar"></span></h4>
+                            <hr class="hr-space" style="margin-left: 15px;"></hr>
+                            <h4 class="nutrients sugar-class">Dietary Fiber <span id="fiber"></span></h4>
+                            <hr class="hr-space"></hr>
+                            <h4 class="nutrients">Protein <span id="protein"></span></h4>
+                            <hr class="hr-ntrFacts" style="margin-top: 2px;"></hr>
+                            <h6 style="opacity: 0.5;">* Percent Daily Values are based on a 2000 calorie diet.</h6>
+                        </div>
+                    </div>
+                    <div class="col-md-1 col-sm-12"></div>
+
+                    <div class="col-md-7 col-sm-12">
+                        <canvas id="myChart" style="
+                            display: block;
+                            height:100%; width:100%;"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
